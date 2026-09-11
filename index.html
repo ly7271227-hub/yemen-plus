@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>يمن بلس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    -webkit-tap-highlight-color:transparent;
+}
+
+body{
+    font-family:'Cairo',sans-serif;
+    background:#080d16;
+    color:#fff;
+    min-height:100vh;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+.app{
+    max-width:600px;
+    margin:auto;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 100% 0%,rgba(214,168,79,.10),transparent 28%),
+        #080d16;
+    padding-bottom:90px;
+}
+
+/* HEADER */
+
+.header{
+    padding:22px 18px 12px;
+}
+
+.header-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:48px;
+    height:48px;
+    border-radius:15px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:linear-gradient(135deg,#d6a84f,#f0d178);
+    color:#101010;
+    font-size:27px;
+    font-weight:900;
+
+    box-shadow:0 8px 25px rgba(214,168,79,.18);
+}
+
+.brand h1{
+    font-size:21px;
+    font-weight:900;
+}
+
+.brand p{
+    color:#788497;
+    font-size:10px;
+}
+
+.notification{
+    width:43px;
+    height:43px;
+    border-radius:14px;
+
+    border:1px solid #202c3d;
+    background:#111a28;
+
+    color:#fff;
+    font-size:18px;
+}
+
+/* WELCOME */
+
+.welcome{
+    padding:8px 18px 20px;
+}
+
+.welcome h2{
+    font-size:25px;
+    line-height:1.4;
+}
+
+.welcome p{
+    color:#7e899b;
+    font-size:12px;
+    margin-top:4px;
+}
+
+/* SEARCH */
+
+.search{
+    margin:0 18px 20px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:13px 15px;
+
+    background:#111927;
+    border:1px solid #202c3d;
+    border-radius:16px;
+}
+
+.search span{
+    font-size:17px;
+}
+
+.search input{
+    width:100%;
+    border:0;
+    outline:0;
+    background:transparent;
+    color:#fff;
+    font-family:inherit;
+}
+
+.search input::placeholder{
+    color:#667286;
+}
+
+/* QUICK CARDS */
+
+.quick{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+
+    padding:0 18px;
+    margin-bottom:25px;
+}
+
+.quick-card{
+    border:1px solid #202c3d;
+    background:#111927;
+
+    border-radius:17px;
+
+    padding:14px 8px;
+
+    text-align:center;
+
+    transition:.2s;
+}
+
+.quick-card:active{
+    transform:scale(.97);
+}
+
+.quick-icon{
+    font-size:23px;
+    margin-bottom:4px;
+}
+
+.quick-card strong{
+    display:block;
+    font-size:11px;
+}
+
+.quick-card small{
+    color:#697588;
+    font-size:9px;
+}
+
+/* SECTION */
+
+.section{
+    padding:0 18px;
+    margin-bottom:25px;
+}
+
+.section-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:12px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    font-size:17px;
+    font-weight:800;
+}
+
+.section-title-icon{
+    width:34px;
+    height:34px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:11px;
+
+    background:#182234;
+}
+
+.update{
+    color:#687588;
+    font-size:9px;
+}
+
+/* RATE */
+
+.rate-card{
+    background:#101827;
+    border:1px solid #202c3d;
+
+    border-radius:20px;
+
+    overflow:hidden;
+    margin-bottom:12px;
+}
+
+.rate-head{
+    padding:15px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:#131d2c;
+}
+
+.city{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    font-weight:800;
+    font-size:14px;
+}
+
+.city-icon{
+    width:32px;
+    height:32px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:#1d293b;
+}
+
+.rate-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.rate-table th{
+    color:#6f7b8e;
+    font-size:10px;
+    font-weight:500;
+}
+
+.rate-table td,
+.rate-table th{
+    padding:11px 8px;
+    text-align:center;
+}
+
+.rate-table td{
+    font-size:13px;
+    font-weight:700;
+}
+
+.rate-table tbody tr:not(:last-child){
+    border-bottom:1px solid #1c2737;
+}
+
+.buy{
+    color:#5ed49a;
+}
+
+.sell{
+    color:#f0c867;
+}
+
+/* SIMPLE CARDS */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.info-card{
+    background:#101827;
+    border:1px solid #202c3d;
+    border-radius:18px;
+
+    padding:16px;
+}
+
+.info-top{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    color:#8792a5;
+    font-size:11px;
+    margin-bottom:12px;
+}
+
+.info-icon{
+    width:32px;
+    height:32px;
+
+    border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#1b2637;
+
+    font-size:17px;
+}
+
+.info-value{
+    font-size:18px;
+    font-weight:900;
+}
+
+.info-unit{
+    color:#687588;
+    font-size:9px;
+}
+
+/* UPDATE BAR */
+
+.update-bar{
+    margin:0 18px 20px;
+
+    padding:13px 15px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    border:1px solid #202c3d;
+    border-radius:15px;
+
+    background:#0f1724;
+
+    color:#7d899c;
+    font-size:10px;
+}
+
+.live{
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+    background:#48d28b;
+
+    box-shadow:0 0 10px rgba(72,210,139,.7);
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+
+    max-width:600px;
+    margin:auto;
+
+    height:72px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    background:rgba(10,16,27,.96);
+    backdrop-filter:blur(18px);
+
+    border-top:1px solid #202b3b;
+
+    z-index:50;
+}
+
+.nav-btn{
+    border:0;
+    background:transparent;
+    color:#687588;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:3px;
+
+    font-size:18px;
+}
+
+.nav-btn span{
+    font-size:9px;
+}
+
+.nav-btn.active{
+    color:#e3bd63;
+}
+
+/* LOADING */
+
+.loading{
+    text-align:center;
+    color:#6e7a8d;
+    padding:25px;
+    font-size:12px;
+}
+
+/* EMPTY */
+
+.empty{
+    text-align:center;
+    color:#687588;
+    padding:20px;
+    font-size:11px;
+}
+
+@media(min-width:601px){
+
+    .bottom-nav{
+        border-radius:20px 20px 0 0;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="header-top">
+
+            <div class="brand">
+
+                <div class="logo">+</div>
+
+                <div>
+                    <h1>يمن بلس</h1>
+                    <p>كل ما يحتاجه اليمني... في مكان واحد</p>
+                </div>
+
+            </div>
+
+            <button class="notification">
+                🔔
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- WELCOME -->
+    <div class="welcome">
+
+        <h2>مرحباً بك 👋</h2>
+
+        <p>
+            تابع أهم الأسعار والمعلومات في اليمن
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+    <div class="search">
+
+        <span>🔎</span>
+
+        <input
+            type="text"
+            placeholder="ابحث في يمن بلس..."
+            id="searchInput"
+        >
+
+    </div>
+
+
+    <!-- QUICK -->
+    <div class="quick">
+
+        <div class="quick-card"
+             onclick="scrollToSection('exchangeSection')">
+
+            <div class="quick-icon">💱</div>
+
+            <strong>الصرف</strong>
+
+            <small>الدولار والسعودي</small>
+
+        </div>
+
+
+        <div class="quick-card"
+             onclick="scrollToSection('goldSection')">
+
+            <div class="quick-icon">🥇</div>
+
+            <strong>الذهب</strong>
+
+            <small>أسعار الذهب</small>
+
+        </div>
+
+
+        <div class="quick-card"
+             onclick="scrollToSection('fuelSection')">
+
+            <div class="quick-icon">⛽</div>
+
+            <strong>الوقود</strong>
+
+            <small>بنزين وديزل</small>
+
+        </div>
+
+    </div>
+
+
+    <!-- EXCHANGE -->
+    <section
+        class="section"
+        id="exchangeSection"
+    >
+
+        <div class="section-head">
+
+            <div class="section-title">
+
+                <div class="section-title-icon">
+                    💱
+                </div>
+
+                أسعار الصرف
+
+            </div>
+
+            <div
+                class="update"
+                id="exchangeUpdate"
+            >
+                جاري التحديث...
+            </div>
+
+        </div>
+
+
+        <div id="exchangeContainer">
+
+            <div class="loading">
+                جاري تحميل الأسعار...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GOLD -->
+    <section
+        class="section"
+        id="goldSection"
+    >
+
+        <div class="section-head">
+
+            <div class="section-title">
+
+                <div class="section-title-icon">
+                    🥇
+                </div>
+
+                أسعار الذهب
+
+            </div>
+
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <div class="info-top">
+
+                    <div class="info-icon">
+                        🥇
+                    </div>
+
+                    عيار 24
+
+                </div>
+
+                <div
+                    class="info-value"
+                    id="gold24"
+                >
+                    —
+                </div>
+
+                <div class="info-unit">
+                    ريال يمني / جرام
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-top">
+
+                    <div class="info-icon">
+                        🥇
+                    </div>
+
+                    عيار 22
+
+                </div>
+
+                <div
+                    class="info-value"
+                    id="gold22"
+                >
+                    —
+                </div>
+
+                <div class="info-unit">
+                    ريال يمني / جرام
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-top">
+
+                    <div class="info-icon">
+                        🥇
+                    </div>
+
+                    عيار 21
+
+                </div>
+
+                <div
+                    class="info-value"
+                    id="gold21"
+                >
+                    —
+                </div>
+
+                <div class="info-unit">
+                    ريال يمني / جرام
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-top">
+
+                    <div class="info-icon">
+                        🥇
+                    </div>
+
+                    عيار 18
+
+                </div>
+
+                <div
+                    class="info-value"
+                    id="gold18"
+                >
+                    —
+                </div>
+
+                <div class="info-unit">
+                    ريال يمني / جرام
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FUEL -->
+    <section
+        class="section"
+        id="fuelSection"
+    >
+
+        <div class="section-head">
+
+            <div class="section-title">
+
+                <div class="section-title-icon">
+                    ⛽
+                </div>
+
+                أسعار الوقود
+
+            </div>
+
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <div class="info-top">
+
+                    <div class="info-icon">
+                        ⛽
+                    </div>
+
+                    البنزين
+
+                </div>
+
+                <div
+                    class="info-value"
+                    id="petrol"
+                >
+                    —
+                </div>
+
+                <div class="info-unit">
+                    حسب الوحدة المحددة
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-top">
+
+                    <div class="info-icon">
+                        🛢️
+                    </div>
+
+                    الديزل
+
+                </div>
+
+                <div
+                    class="info-value"
+                    id="diesel"
+                >
+                    —
+                </div>
+
+                <div class="info-unit">
+                    حسب الوحدة المحددة
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-top">
+
+                    <div class="info-icon">
+                        🔥
+                    </div>
+
+                    الغاز
+
+                </div>
+
+                <div
+                    class="info-value"
+                    id="gas"
+                >
+                    —
+                </div>
+
+                <div class="info-unit">
+                    حسب الوحدة المحددة
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- UPDATE -->
+    <div class="update-bar">
+
+        <div class="live"></div>
+
+        <span>
+            البيانات متصلة مباشرة بقاعدة بيانات يمن بلس
+        </span>
+
+    </div>
+
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+
+        <button
+            class="nav-btn active"
+            onclick="goHome()"
+        >
+            🏠
+            <span>الرئيسية</span>
+        </button>
+
+        <button
+            class="nav-btn"
+            onclick="scrollToSection('exchangeSection')"
+        >
+            💱
+            <span>الصرف</span>
+        </button>
+
+        <button
+            class="nav-btn"
+            onclick="scrollToSection('goldSection')"
+        >
+            🥇
+            <span>الذهب</span>
+        </button>
+
+        <button
+            class="nav-btn"
+            onclick="scrollToSection('fuelSection')"
+        >
+            ⛽
+            <span>الوقود</span>
+        </button>
+
+    </nav>
+
+</div>
+
+
+<script type="module">
+
+import {
+    initializeApp
+}
+from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+
+
+import {
+    getDatabase,
+    ref,
+    onValue
+}
+from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+
+
+/* FIREBASE */
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyCil9JDyrZiy28NkY6Ktw06A-wo5yMv_cU",
+
+    authDomain:
+    "yemen-plus-5eff6.firebaseapp.com",
+
+    databaseURL:
+    "https://yemen-plus-5eff6-default-rtdb.europe-west1.firebasedatabase.app",
+
+    projectId:
+    "yemen-plus-5eff6",
+
+    storageBucket:
+    "yemen-plus-5eff6.firebasestorage.app",
+
+    messagingSenderId:
+    "1067015158448",
+
+    appId:
+    "1:1067015158448:web:4f840cf3eb90f20bc75975",
+
+    measurementId:
+    "G-WVP8G4QRN0"
+
+};
+
+
+const app =
+initializeApp(firebaseConfig);
+
+const db =
+getDatabase(app);
+
+
+/* FORMAT */
+
+function number(value){
+
+    if(value === undefined ||
+       value === null ||
+       value === ""){
+        return "—";
+    }
+
+    return Number(value).toLocaleString("ar-YE");
+
+}
+
+
+/* EXCHANGE */
+
+onValue(
+    ref(db,"exchange_rates"),
+    snapshot => {
+
+        const data =
+        snapshot.val();
+
+        const container =
+        document.getElementById(
+            "exchangeContainer"
+        );
+
+        if(!data){
+
+            container.innerHTML =
+            `<div class="empty">
+                لا توجد أسعار مضافة حالياً
+            </div>`;
+
+            return;
+        }
+
+
+        let html = "";
+
+
+        /* SANAA */
+
+        if(data.sanaa){
+
+            html += `
+
+            <div class="rate-card">
+
+                <div class="rate-head">
+
+                    <div class="city">
+
+                        <div class="city-icon">
+                            🏙️
+                        </div>
+
+                        صنعاء
+
+                    </div>
+
+                </div>
+
+
+                <table class="rate-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>العملة</th>
+                            <th>شراء</th>
+                            <th>بيع</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>🇺🇸 الدولار</td>
+
+                            <td class="buy">
+                                ${number(data.sanaa.usd_buy)}
+                            </td>
+
+                            <td class="sell">
+                                ${number(data.sanaa.usd_sell)}
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>🇸🇦 السعودي</td>
+
+                            <td class="buy">
+                                ${number(data.sanaa.sar_buy)}
+                            </td>
+
+                            <td class="sell">
+                                ${number(data.sanaa.sar_sell)}
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            `;
+
+        }
+
+
+        /* ADEN */
+
+        if(data.aden){
+
+            html += `
+
+            <div class="rate-card">
+
+                <div class="rate-head">
+
+                    <div class="city">
+
+                        <div class="city-icon">
+                            🌊
+                        </div>
+
+                        عدن
+
+                    </div>
+
+                </div>
+
+
+                <table class="rate-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>العملة</th>
+                            <th>شراء</th>
+                            <th>بيع</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>🇺🇸 الدولار</td>
+
+                            <td class="buy">
+                                ${number(data.aden.usd_buy)}
+                            </td>
+
+                            <td class="sell">
+                                ${number(data.aden.usd_sell)}
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>🇸🇦 السعودي</td>
+
+                            <td class="buy">
+                                ${number(data.aden.sar_buy)}
+                            </td>
+
+                            <td class="sell">
+                                ${number(data.aden.sar_sell)}
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            `;
+
+        }
+
+
+        container.innerHTML =
+        html ||
+        `<div class="empty">
+            لا توجد أسعار مضافة
+        </div>`;
+
+
+        if(data.updatedAt){
+
+            const date =
+            new Date(data.updatedAt);
+
+            document.getElementById(
+                "exchangeUpdate"
+            ).textContent =
+            "آخر تحديث: " +
+            date.toLocaleString("ar-YE");
+
+        }
+
+    }
+);
+
+
+/* GOLD */
+
+onValue(
+    ref(db,"gold"),
+    snapshot => {
+
+        const data =
+        snapshot.val();
+
+        if(!data) return;
+
+
+        document.getElementById("gold24")
+        .textContent =
+        number(data.gram24);
+
+
+        document.getElementById("gold22")
+        .textContent =
+        number(data.gram22);
+
+
+        document.getElementById("gold21")
+        .textContent =
+        number(data.gram21);
+
+
+        document.getElementById("gold18")
+        .textContent =
+        number(data.gram18);
+
+    }
+);
+
+
+/* FUEL */
+
+onValue(
+    ref(db,"fuel"),
+    snapshot => {
+
+        const data =
+        snapshot.val();
+
+        if(!data) return;
+
+
+        document.getElementById("petrol")
+        .textContent =
+        number(data.petrol);
+
+
+        document.getElementById("diesel")
+        .textContent =
+        number(data.diesel);
+
+
+        document.getElementById("gas")
+        .textContent =
+        number(data.gas);
+
+    }
+);
+
+
+/* SEARCH */
+
+document
+.getElementById("searchInput")
+.addEventListener(
+    "input",
+    function(){
+
+        const value =
+        this.value.trim().toLowerCase();
+
+        document
+        .querySelectorAll(
+            ".section,.quick-card"
+        )
+        .forEach(element => {
+
+            if(!value){
+
+                element.style.display="";
+                return;
+
+            }
+
+            const text =
+            element.innerText.toLowerCase();
+
+            element.style.display =
+            text.includes(value)
+            ? ""
+            : "none";
+
+        });
+
+    }
+);
+
+
+/* NAV */
+
+window.scrollToSection =
+function(id){
+
+    const element =
+    document.getElementById(id);
+
+    if(element){
+
+        element.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    }
+
+};
+
+
+window.goHome =
+function(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+};
+
+</script>
+
+</body>
+</html>
